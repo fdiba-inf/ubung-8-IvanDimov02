@@ -10,9 +10,9 @@ public class Point {
         y = 0;
     }
 
-    public Point(double a, double b) { 
-        x = a;
-        y = b;
+    public Point(double x, double y) { 
+        this.x = x;
+        this.y = y;
     }
 
     public Point(Point otherPoint) {
