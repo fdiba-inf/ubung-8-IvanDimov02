@@ -6,8 +6,8 @@ public class Point {
     double x,y;
 
     public Point() { 
-        x = 0.0;
-        y = 0.0;
+        x = 0;
+        y = 0;
     }
 
     public Point(double a, double b) { 
@@ -22,8 +22,8 @@ public class Point {
 
     public void initialize() { 
         Scanner input = new Scanner(System.in);
-        x = input.nextDouble();
-        y = input.nextDouble();
+        x = Utils.INPUT.nextDouble();
+        y = Utils.INPUT.nextDouble();
     }
 
     public void translate(double xDelta, double yDelta) { 
@@ -33,17 +33,16 @@ public class Point {
 
     public Point createNewTranslatedPoint(double xDelta, double yDelta) { 
         Point a = new Point();
-        a.x = xDelta + x;
-        a.y = yDelta + y;
+        double newX = xDelta + x;
+        double newY = yDelta + y;
+        Point a = new Point(newX, newY);
         return a;
     }
 
     public boolean equals(Point otherPoint) { 
-        if(this.x == otherPoint.x && this.y == otherPoint.y) {
-          return true;
-        } else {
-        return false;
-        }
+        boolean xEqual =Utils.equals(x,otherPoint.x);
+        boolean yEqual =Utils.equals(y,otherPoint.y);
+        return xEqual && yEqual;
     }
 
     public String toString() {  
