@@ -1,6 +1,6 @@
 package exercise8;
 
-import.java.util.Scanner;
+import java.util.Scanner;
 
 public class Point {
     double x;
