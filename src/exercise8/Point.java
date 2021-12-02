@@ -1,40 +1,52 @@
 package exercise8;
 
-public class Point {
-    // Define attributes
+import java.util.Scanner;
 
-    public Point() {
-        // Initialize attributes to 0
+public class Point {
+    double x,y;
+
+    public Point() { 
+        x = 0.0;
+        y = 0.0;
     }
 
-    public Point(double x, double y) {
-        // Initialize attributes by coping x and y parameters
+    public Point(double a, double b) { 
+        x = a;
+        y = b;
     }
 
     public Point(Point otherPoint) {
-        // Initialize attributes by coping attributes of otherPoint
+        x = otherPoint.x;
+        y = otherPoint.x;
     }
 
-    public void initialize() {
-        // Change attributes through console
+    public void initialize() { 
+        Scanner input = new Scanner(System.in);
+        x = input.nextDouble();
+        y = input.nextDouble();
     }
 
-    public void translate(double xDelta, double yDelta) {
-        // Change attributes by adding xDelta and yDelta
+    public void translate(double xDelta, double yDelta) { 
+        x = x + xDelta;
+        y = y + yDelta;
     }
 
-    public Point createNewTranslatedPoint(double xDelta, double yDelta) {
-        // Create new point which is translated relative to this point
-        return null;
+    public Point createNewTranslatedPoint(double xDelta, double yDelta) { 
+        Point a = new Point();
+        a.x = xDelta + x;
+        a.y = yDelta + y;
+        return a;
     }
 
-    public boolean equals(Point otherPoint) {
-        // Compare attributes of this point to attributes of otherPoint for equality
+    public boolean equals(Point otherPoint) { 
+        if(this.x == otherPoint.x && this.y == otherPoint.y) {
+          return true;
+        } else {
         return false;
+        }
     }
 
-    public String toString() {
-        // Represent attributes as string
-        return null;
+    public String toString() {  
+        return "(" + x + ", " + y + ")";
     }
 }
