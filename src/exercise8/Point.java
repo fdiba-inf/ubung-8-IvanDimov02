@@ -35,8 +35,8 @@ public class Point {
         Point a = new Point();
         double newX = xDelta + x;
         double newY = yDelta + y;
-        Point a = new Point(newX, newY);
-        return a;
+        Point z = new Point(newX, newY);
+        return z;
     }
 
     public boolean equals(Point otherPoint) { 
