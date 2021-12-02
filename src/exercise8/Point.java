@@ -1,9 +1,9 @@
 package exercise8;
 
-import java.util.Scanner;
 
 public class Point {
-    double x,y;
+    double x;
+    double y;
 
     public Point() { 
         x = 0;
@@ -20,8 +20,7 @@ public class Point {
         y = otherPoint.x;
     }
 
-    public void initialize() { 
-        Scanner input = new Scanner(System.in);
+    public void initialize() {
         x = Utils.INPUT.nextDouble();
         y = Utils.INPUT.nextDouble();
     }
@@ -33,10 +32,9 @@ public class Point {
 
     public Point createNewTranslatedPoint(double xDelta, double yDelta) { 
         Point a = new Point();
-        double newX = xDelta + x;
-        double newY = yDelta + y;
-        Point z = new Point(newX, newY);
-        return z;
+        double newX = x + xDelta;
+        double newY = y + yDelta;
+        return new Point(newX, newY);
     }
 
     public boolean equals(Point otherPoint) { 
